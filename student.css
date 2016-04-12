@@ -9,7 +9,7 @@ div#fixedheader {
 }
 
 div#studentContent {
-    margin-top:40px;
+    margin-top:68px;
     margin-bottom:24px;
     margin-left:auto;
     margin-right:auto;
@@ -26,6 +26,11 @@ div#personalInfo {
 }
 
 div#coursesInfo {
+    margin-top:-10px;
+    padding:8px;
+}
+
+div#externalLinks{
     margin-top:-10px;
     padding:8px;
 }
@@ -60,6 +65,10 @@ span.emphasize {
     font-weight:bold;
 }
 
+h1.studentName {
+    margin-left:5px;
+}
+
 p.subSection {
     margin-bottom:0;
     font-weight:bold;
@@ -67,5 +76,11 @@ p.subSection {
 }
 
 p.course {
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:15px;
+}
+
+a.link {
     margin-left:15px;
 }
