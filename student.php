@@ -1,7 +1,7 @@
 <?php
 
 //Get current student's name for loading data
-$currStudent = $_GET['name'];
+$currStudent = "students/" . $_GET['name'];
 
 //Read in student data from XML file
 $studentXML = new SimpleXMLElement($currStudent, $options = 0, $data_is_url = true);
@@ -52,7 +52,10 @@ echo <<<_END
             <div id="studentContent">
             
                 <!-- Student name & picture -->
-                <h1 class="studentName"><img class="student" src="$studentXML->picture">$studentXML->name</h1>
+                <h1 class="studentName">
+                    <img class="student" src="profile-pictures/$studentXML->picture">
+                    $studentXML->name
+                </h1>
                 <hr class="picture"/>
                 
                 <!-- Personal info pane -->
@@ -100,7 +103,7 @@ echo <<<_END
                 </div>
            
                 <!-- Edit Button -->
-                <form action="edit.php" method="get">
+                <form action="edit-student.php" method="post">
                     <input type="hidden" name="name" value=$currStudent>
                     <input type="submit" value="Edit">
                 </form>
