@@ -1,7 +1,7 @@
 <?php
 
 //Read in student data from XML file
-$studentXML = new SimpleXMLElement("test-student.xml", $options = 0, $data_is_url = true);
+$studentXML = new SimpleXMLElement($_GET['name'], $options = 0, $data_is_url = true);
 
 //Get degrees list
 $degrees = $studentXML->degrees->degree[0];
