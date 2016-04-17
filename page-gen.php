@@ -3,6 +3,20 @@
 //Read in student data from XML file
 $studentXML = new SimpleXMLElement("test-student.xml", $options = 0, $data_is_url = true);
 
+//Get degrees list
+$degrees = $studentXML->degrees->degree[0];
+$i = 0;
+foreach( $studentXML->degrees->degree as $currDegree )
+{
+    if( $i > 0 )
+    {
+        $degrees .= "<br/>";
+        $degrees .= $currDegree;
+    }
+    $i += 1;
+}
+
+
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
@@ -29,8 +43,8 @@ echo <<<_END
                 <div id="personalInfo">
                 
                     <!-- Degree information -->
-                    <p>B.S. Computer Science<br/>B.S. Applied & Computational Mathematics</p>
-                    <p> <span class="emphasize">Graduation Date:</span> May 2017 </p>
+                    <p>$degrees</p>
+                    <p> <span class="emphasize">Graduation Date:</span> $studentXML->gradDate </p>
                     
                     <!-- Contact information -->
                     <p>

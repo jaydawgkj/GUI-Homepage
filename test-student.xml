@@ -8,6 +8,11 @@
         <degree>B.S. Computer Engineering</degree>
     </degrees>
     <gradDate>May 2018</gradDate>
+    <contactInfo>
+        <schoolEmail>john.doe@example.com</schoolEmail>
+        <personalEmail></personalEmail>
+        <phoneNum></phoneNum>
+    </contactInfo>
     <coursesList>
         <course>CSC 150 - Computer Programming I</course>
         <course>CSC 250 - Computer Programming II</course>
@@ -22,9 +27,4 @@
     <GitHub>https://github.com/madyke</GitHub>
     <KnewRecruit>https://beta.knewrecruit.com/s/Matt</KnewRecruit>
     <interestArea>Web Programming</interestArea>
-    <contactInfo>
-        <schoolEmail>john.doe@example.com</schoolEmail>
-        <personalEmail></personalEmail>
-        <phoneNum></phoneNum>
-    </contactInfo>
 </student>

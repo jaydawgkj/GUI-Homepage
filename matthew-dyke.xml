@@ -7,6 +7,11 @@
         <degree>B.S. Applied and Computational Mathematics</degree>
     </degrees>
     <gradDate>May 2017</gradDate>
+    <contactInfo>
+        <schoolEmail>matthew.dyke@mines.sdsmt.edu</schoolEmail>
+        <personalEmail></personalEmail>
+        <phoneNum></phoneNum>
+    </contactInfo>
     <coursesList>
         <course>CSC 447 - AI</course>
         <course>CSC 468 - GUI</course>
@@ -17,9 +22,4 @@
     <GitHub>https://github.com/madyke</GitHub>
     <KnewRecruit>https://beta.knewrecruit.com/s/Matt</KnewRecruit>
     <interestArea>Artificial Intelligence</interestArea>
-    <contactInfo>
-        <schoolEmail>matthew.dyke@mines.sdsmt.edu</schoolEmail>
-        <personalEmail></personalEmail>
-        <phoneNum></phoneNum>
-    </contactInfo>
 </student>
