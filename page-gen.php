@@ -95,7 +95,11 @@ echo <<<_END
                     <a class="link" href="$studentXML->KnewRecruit">KnewRecruit</a><br/>
                 
                 </div>
-                
+           
+                <!-- Edit Button -->
+                <form action="edit.php" method="get">
+                    <button type="button">Edit</button>
+                </form>
             </div>
             
             <!-- Fixed Footer -->
