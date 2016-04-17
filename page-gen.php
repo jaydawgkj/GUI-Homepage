@@ -1,7 +1,9 @@
 <?php
 
-$studentXML = new SimpleXMLElement("C:\\xampp\\htdocs\\SDSMT_Web\\student.xml", $options = 0, $data_is_url = true);
+//Read in student data from XML file
+$studentXML = new SimpleXMLElement("test-student.xml", $options = 0, $data_is_url = true);
 
+//Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
         <head>
@@ -20,7 +22,7 @@ echo <<<_END
             <div id="studentContent">
             
                 <!-- Student name & picture -->
-                <h1 class="studentName"><img class="student" src="matt-dyke.jpg">Matt Dyke</h1>
+                <h1 class="studentName"><img class="student" src="$studentXML->picture">$studentXML->name</h1>
                 <hr class="picture"/>
                 
                 <!-- Personal info pane -->
