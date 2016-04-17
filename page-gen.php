@@ -21,6 +21,15 @@ $schoolEmail = $studentXML->contactInfo->schoolEmail;
 $personalEmail = $studentXML->contactInfo->personalEmail;
 $phoneNum = $studentXML->contactInfo->phoneNum;
 
+//Get courses list
+$courses = "";
+foreach( $studentXML->coursesList->course as $currCourse )
+{
+    $courses .= "<p class='course'>";
+    $courses .= $currCourse;
+    $courses .= "</p>";
+}
+
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
@@ -66,11 +75,10 @@ echo <<<_END
                     <hr/>
                     
                     <!-- List of courses -->
-                    <p class="course">CSC 447 - Artificial Intelligence</p>
-                    <p class="course">CSC 468 - Graphical Interface Programming</p>
-                    <p class="course">CSC 470 - Software Engineering</p>
-                    <p class="course">MATH 424 - Advanced Calculus II</p>
-                    <p class="course">MATH 402 - Undergraduate Research</p>
+                    $courses
+                    
+                    <!-- Area of interest -->
+                    <p class='course'><span class="emphasize"><br/>Area of Interest:</span> $studentXML->interestArea</p>
                 
                 </div>
                 
@@ -81,10 +89,10 @@ echo <<<_END
                     <hr/>
                     
                     <!-- List of external links -->
-                    <a class="link" href="http://dev.mcs.sdsmt.edu/~7025592/">Student Webpage</a><br/>
-                    <a class="link" href="https://www.linkedin.com/in/matthewdyke">LinkedIn</a><br/>
-                    <a class="link" href="https://github.com/madyke">GitHub</a><br/>
-                    <a class="link" href="https://beta.knewrecruit.com/s/Matt">KnewRecruit</a><br/>
+                    <a class="link" href="$studentXML->studentWebsite">Student Webpage</a><br/>
+                    <a class="link" href="$studentXML->Linkedin">LinkedIn</a><br/>
+                    <a class="link" href="$studentXML->GitHub">GitHub</a><br/>
+                    <a class="link" href="$studentXML->KnewRecruit">KnewRecruit</a><br/>
                 
                 </div>
                 

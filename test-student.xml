@@ -18,8 +18,8 @@
         <course>CSC 250 - Computer Programming II</course>
         <course>CSC 300 - Data Structures</course>
         <course>CSC 372 - Analysis of Algorithms</course>
-        <course>CSC 447 - AI</course>
-        <course>CSC 468 - GUI</course>
+        <course>CSC 447 - Artificial Intelligence</course>
+        <course>CSC 468 - Graphical User Interfaces Programming</course>
         <course>CSC 470 - Software Engineering</course>
     </coursesList>
     <studentWebsite>http://dev.mcs.sdsmt.edu/~7025592/</studentWebsite>
