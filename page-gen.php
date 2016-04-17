@@ -1,7 +1,10 @@
 <?php
 
+//Get current student's name for loading data
+$currStudent = $_GET['name'];
+
 //Read in student data from XML file
-$studentXML = new SimpleXMLElement($_GET['name'], $options = 0, $data_is_url = true);
+$studentXML = new SimpleXMLElement($currStudent, $options = 0, $data_is_url = true);
 
 //Get degrees list
 $degrees = $studentXML->degrees->degree[0];
@@ -98,7 +101,8 @@ echo <<<_END
            
                 <!-- Edit Button -->
                 <form action="edit.php" method="get">
-                    <button type="button">Edit</button>
+                    <input type="hidden" name="name" value=$currStudent>
+                    <input type="submit" value="Edit">
                 </form>
             </div>
             
