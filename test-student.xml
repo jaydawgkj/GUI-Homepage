@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <student>
-    <name>Matt Dyke</name>
+    <name>John Doe</name>
+    <picture></picture>
     <degrees>
         <degree>B.S. Computer Science</degree>
         <degree>B.S. Applied and Computational Mathematics</degree>
+        <degree>B.S. Computer Engineering</degree>
     </degrees>
-    <gradDate>May 2017</gradDate>
+    <gradDate>May 2018</gradDate>
     <coursesList>
+        <course>CSC 150 - Computer Programming I</course>
+        <course>CSC 250 - Computer Programming II</course>
+        <course>CSC 300 - Data Structures</course>
+        <course>CSC 372 - Analysis of Algorithms</course>
         <course>CSC 447 - AI</course>
         <course>CSC 468 - GUI</course>
         <course>CSC 470 - Software Engineering</course>
@@ -15,9 +21,9 @@
     <Linkedin>https://www.linkedin.com/in/matthewdyke</Linkedin>
     <GitHub>https://github.com/madyke</GitHub>
     <KnewRecruit>https://beta.knewrecruit.com/s/Matt</KnewRecruit>
-    <interestArea>Artificial Intelligence</interestArea>
+    <interestArea>Web Programming</interestArea>
     <contactInfo>
-        <schoolEmail>matthew.dyke@mines.sdsmt.edu</schoolEmail>
+        <schoolEmail>john.doe@example.com</schoolEmail>
         <personalEmail></personalEmail>
         <phoneNum></phoneNum>
     </contactInfo>
