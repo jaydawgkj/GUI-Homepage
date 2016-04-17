@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <student>
     <name>Matt Dyke</name>
-    <degree>B.S. Computer Science</degree>
-    <degree>B.S. Applied and Computational Mathematics</degree>
+    <degrees>
+        <degree>B.S. Computer Science</degree>
+        <degree>B.S. Applied and Computational Mathematics</degree>
+    </degrees>
     <gradDate>May 2017</gradDate>
     <coursesList>
         <course>CSC 447 - AI</course>
