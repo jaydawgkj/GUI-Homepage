@@ -16,6 +16,10 @@ foreach( $studentXML->degrees->degree as $currDegree )
     $i += 1;
 }
 
+//Get contact info
+$schoolEmail = $studentXML->contactInfo->schoolEmail;
+$personalEmail = $studentXML->contactInfo->personalEmail;
+$phoneNum = $studentXML->contactInfo->phoneNum;
 
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
@@ -48,9 +52,9 @@ echo <<<_END
                     
                     <!-- Contact information -->
                     <p>
-                        <span class="emphasize">School Email:</span> matthew.dyke@mines.sdsmt.edu<br/>
-                        <span class="emphasize">Personal Email:</span> email@example.com <br/>
-                        <span class="emphasize">Phone Number:</span> 605-555-1234<br/>
+                        <span class="emphasize">School Email:</span> $schoolEmail<br/>
+                        <span class="emphasize">Personal Email:</span> $personalEmail<br/>
+                        <span class="emphasize">Phone Number:</span> $phoneNum<br/>
                     </p>
                 
                 </div>
