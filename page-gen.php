@@ -1,9 +1,11 @@
 <?php
 
+$studentXML = new SimpleXMLElement("C:\\xampp\\htdocs\\SDSMT_Web\\student.xml", $options = 0, $data_is_url = true);
+
 echo <<<_END
     <html lang="en">
         <head>
-            <title>Matt Dyke</title>
+            <title>$studentXML->name</title>
             <link rel="stylesheet" type="text/css" href="student.css" />
             <meta charset="utf-8"/>
         </head>
