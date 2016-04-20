@@ -16,8 +16,8 @@
         <course>CSC 250 - Computer Programming II</course>
         <course>CSC 300 - Data Structures</course>
         <course>CSC 372 - Analysis of Algorithms</course>
-	<course>CSC 456 - Operating Systems</course>
-	<course>CSC 4XX - Computer Vision
+        <course>CSC 456 - Operating Systems</course>
+        <course>CSC 4XX - Computer Vision</course>
         <course>CSC 468 - Graphical User Interfaces Programming</course>
         <course>CSC 470 - Software Engineering</course>
     </coursesList>
