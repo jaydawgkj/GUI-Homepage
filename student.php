@@ -33,6 +33,16 @@ foreach( $studentXML->coursesList->course as $currCourse )
     $courses .= "</p>";
 }
 
+//Get student website from XML if present
+if( isset( $studentXML->studentWebsite ) )
+{
+    $studentWebsite = "<a class='link' href='$studentXML->studentWebsite'>Student Webpage</a><br/>";
+}
+else
+{
+    $studentWebsite = "";
+}
+
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
@@ -95,8 +105,8 @@ echo <<<_END
                     <hr/>
                     
                     <!-- List of external links -->
-                    <a class="link" href="$studentXML->studentWebsite">Student Webpage</a><br/>
-                    <a class="link" href="$studentXML->Linkedin">LinkedIn</a><br/>
+                    $studentWebsite
+                    <a class="link" href="$studentXML->LinkedIn">LinkedIn</a><br/>
                     <a class="link" href="$studentXML->GitHub">GitHub</a><br/>
                     <a class="link" href="$studentXML->KnewRecruit">KnewRecruit</a><br/>
                 
