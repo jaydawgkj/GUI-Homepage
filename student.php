@@ -43,6 +43,16 @@ else
     $studentWebsite = "";
 }
 
+//Get student LinkedIn account from XML if present
+if( isset( $studentXML->LinkedIn ) )
+{
+    $studentLinkedIn = "<a class='link' href='$studentXML->LinkedIn'>LinkedIn</a><br/>";
+}
+else
+{
+    $studentLinkedIn = "";
+}
+
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
@@ -106,7 +116,7 @@ echo <<<_END
                     
                     <!-- List of external links -->
                     $studentWebsite
-                    <a class="link" href="$studentXML->LinkedIn">LinkedIn</a><br/>
+                    $studentLinkedIn
                     <a class="link" href="$studentXML->GitHub">GitHub</a><br/>
                     <a class="link" href="$studentXML->KnewRecruit">KnewRecruit</a><br/>
                 
