@@ -33,6 +33,46 @@ foreach( $studentXML->coursesList->course as $currCourse )
     $courses .= "</p>";
 }
 
+//Get student website from XML if present
+if( !empty( $studentXML->studentWebsite ) )
+{
+    $studentWebsite = "<a class='link' href='$studentXML->studentWebsite'>Student Webpage</a><br/>";
+}
+else
+{
+    $studentWebsite = "";
+}
+
+//Get student LinkedIn account from XML if present
+if( !empty( $studentXML->LinkedIn ) )
+{
+    $studentLinkedIn = "<a class='link' href='$studentXML->LinkedIn'>LinkedIn</a><br/>";
+}
+else
+{
+    $studentLinkedIn = "";
+}
+
+//Get student GitHub account from XML if present
+if( !empty( $studentXML->GitHub ) )
+{
+    $studentGitHub = "<a class='link' href='$studentXML->GitHub'>GitHub</a><br/>";
+}
+else
+{
+    $studentGitHub = "";
+}
+
+//Get student KnewRecruit account from XML if present
+if( !empty( $studentXML->KnewRecruit ) )
+{
+    $studentKnewRecruit = "<a class='link' href='$studentXML->KnewRecruit'>KnewRecruit</a><br/>";
+}
+else
+{
+    $studentKnewRecruit = "";
+}
+
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
@@ -95,10 +135,10 @@ echo <<<_END
                     <hr/>
                     
                     <!-- List of external links -->
-                    <a class="link" href="$studentXML->studentWebsite">Student Webpage</a><br/>
-                    <a class="link" href="$studentXML->Linkedin">LinkedIn</a><br/>
-                    <a class="link" href="$studentXML->GitHub">GitHub</a><br/>
-                    <a class="link" href="$studentXML->KnewRecruit">KnewRecruit</a><br/>
+                    $studentWebsite
+                    $studentLinkedIn
+                    $studentGitHub
+                    $studentKnewRecruit
                 
                 </div>
            

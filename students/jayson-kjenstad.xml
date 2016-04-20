@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <student>
     <name>Jayson Kjenstad</name>
-    <picture>jayson.jpg</picture>
+    <picture>jayson-kjenstad.jpg</picture>
     <degrees>
         <degree>B.S. Computer Science</degree>
     </degrees>
@@ -16,14 +16,12 @@
         <course>CSC 250 - Computer Programming II</course>
         <course>CSC 300 - Data Structures</course>
         <course>CSC 372 - Analysis of Algorithms</course>
-	<course>CSC 456 - Operating Systems</course>
-	<course>CSC 4XX - Computer Vision
+        <course>CSC 456 - Operating Systems</course>
+        <course>CSC 4XX - Computer Vision</course>
         <course>CSC 468 - Graphical User Interfaces Programming</course>
         <course>CSC 470 - Software Engineering</course>
     </coursesList>
     <studentWebsite>http://dev.mcs.sdsmt.edu/~7142885/</studentWebsite>
-    <Linkedin>https://www.linkedin.com</Linkedin>
     <GitHub>https://github.com/jaydawgkj</GitHub>
-    <KnewRecruit>https://beta.knewrecruit.com</KnewRecruit>
     <interestArea>Mobile Applications</interestArea>
 </student>
