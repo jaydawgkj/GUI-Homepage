@@ -19,8 +19,8 @@ echo <<<_END
                 <!-- Student content pane -->
                 <div id="studentContent">
                     <form action="save-file.php" method="post">
-                        <input type="hidden" name="name" value=$currStudent>
-                        Name: <input type="text" value="$studentXML->name">
+                        <input type="hidden" name="file" value=$currStudent>
+                        Name: <input type="text" name="name" value="$studentXML->name">
                         
                         <!-- Save button -->
                         <br/><input type="submit" value="Save">
