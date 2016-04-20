@@ -34,7 +34,7 @@ foreach( $studentXML->coursesList->course as $currCourse )
 }
 
 //Get student website from XML if present
-if( isset( $studentXML->studentWebsite ) )
+if( !empty( $studentXML->studentWebsite ) )
 {
     $studentWebsite = "<a class='link' href='$studentXML->studentWebsite'>Student Webpage</a><br/>";
 }
@@ -44,7 +44,7 @@ else
 }
 
 //Get student LinkedIn account from XML if present
-if( isset( $studentXML->LinkedIn ) )
+if( !empty( $studentXML->LinkedIn ) )
 {
     $studentLinkedIn = "<a class='link' href='$studentXML->LinkedIn'>LinkedIn</a><br/>";
 }
@@ -54,7 +54,7 @@ else
 }
 
 //Get student GitHub account from XML if present
-if( isset( $studentXML->GitHub ) )
+if( !empty( $studentXML->GitHub ) )
 {
     $studentGitHub = "<a class='link' href='$studentXML->GitHub'>GitHub</a><br/>";
 }
@@ -64,7 +64,7 @@ else
 }
 
 //Get student KnewRecruit account from XML if present
-if( isset( $studentXML->KnewRecruit ) )
+if( !empty( $studentXML->KnewRecruit ) )
 {
     $studentKnewRecruit = "<a class='link' href='$studentXML->KnewRecruit'>KnewRecruit</a><br/>";
 }
