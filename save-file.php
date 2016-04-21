@@ -15,5 +15,7 @@
     
     //Save XML document
     $dom->formatOutput = true;
-    $dom->save( "test.xml" );    
+    $dom->save( "test.xml" );
+    
+    header( "Location: http://localhost/SDSMT_Web/student.php?name=matthew-dyke.xml" );
 ?>
