@@ -42,9 +42,19 @@ echo <<<_END
                 <!-- Degrees & Graduation Date -->
                 <div id="degreeContainer">
                     Degrees:<br/>
-                    <input type="text" id="degrees" name="degrees[]"/><br/>
-                    <input type="button" id="addDegree" value="Add Degree"/><br/>
+                    <input type="text" id="degrees" name="degrees[]"/>
                 </div>
+                <input type="button" id="addDegreeBtn" value="Add Degree" onclick="alert("HI");"/><br/>
+<!-- <script>
+    document.getElementById("addDegreeBtn").onclick=function() {
+        var div = document.getElementById("degreeContainer");
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "degrees[]";
+        div.appendChild(document.createElement("br"));
+        div.appendChild(input);
+    };
+</script> -->
                 Graduation Date: <input type="text" name="gradDate" value="$studentXML->gradDate"><br/>
                 <br/>
                 
