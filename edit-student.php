@@ -55,7 +55,11 @@ echo <<<_END
                 <br/>
                 
                 <!-- Courses & Interest Area -->
-                
+                <div id="courseContainer">
+                    Courses:<br/>
+                    <input type="text" id="courses" name="coureses[]"/>
+                </div>
+                <input type="button" id="addCourseBtn" value="Add Course" onclick="addCourse();"/><br/>
                 Area of Interest: <input type="text" name="interestArea" value="$studentXML->interestArea"><br/>
                 <br/>
                 
