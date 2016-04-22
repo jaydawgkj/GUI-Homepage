@@ -38,21 +38,21 @@ echo <<<_END
                 <br/>
                 
                 <!-- Contact Information -->
-                School Email: <input type="text" size="30" name=schoolEmail" value="$schoolEmail"><br/>
-                Personal Email: <input type="text" size="30" name=personalEmail" value="$personalEmail"><br/>
-                Phone Number: <input type="text" name=phoneNum" value="$phoneNum"><br/>
+                School Email: <input type="text" size="30" name="schoolEmail" value="$schoolEmail"><br/>
+                Personal Email: <input type="text" size="30" name="personalEmail" value="$personalEmail"><br/>
+                Phone Number: <input type="text" name="phoneNum" value="$phoneNum"><br/>
                 <br/>
                 
                 <!-- Courses & Interest Area -->
                 
-                Area of Interest: <input type="text" name=interestArea value="$studentXML->interestArea"><br/>
+                Area of Interest: <input type="text" name="interestArea" value="$studentXML->interestArea"><br/>
                 <br/>
                 
                 <!-- External Links -->
-                Student Webpage: <input type="text" size="50" name=studentWebsite value="$studentXML->studentWebsite"><br/>
-                LinkedIn: <input type="text" size="50" name=LinkedIn value="$studentXML->LinkedIn"><br/>
-                GitHub: <input type="text" size="50" name=GitHub value="$studentXML->GitHub"><br/>
-                KnewRecruit: <input type="text" size="50" name=KnewRecruit value="$studentXML->KnewRecruit"><br/>
+                Student Webpage: <input type="text" size="50" name="studentWebsite" value="$studentXML->studentWebsite"><br/>
+                LinkedIn: <input type="text" size="50" name="LinkedIn" value="$studentXML->LinkedIn"><br/>
+                GitHub: <input type="text" size="50" name="GitHub" value="$studentXML->GitHub"><br/>
+                KnewRecruit: <input type="text" size="50" name="KnewRecruit" value="$studentXML->KnewRecruit"><br/>
                 
                 <!-- Save, Reset, & Cancel buttons -->
                 <br/><input type="submit" value="Save"/>
