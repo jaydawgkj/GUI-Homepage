@@ -12,10 +12,10 @@ function addDegree() {
 
 
 function addDegree() {
-    var div = document.getElementById("degreeContainer");
-    var input = document.createElement("input");
-    input.type = "text";
-    input.name = "degrees[]";
-    div.appendChild(document.createElement("br"));
+    var div = document.getElementById('degreeContainer');
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'degrees[]';
+    div.appendChild(document.createElement('br'));
     div.appendChild(input);
 };
