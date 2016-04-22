@@ -18,6 +18,7 @@ echo <<<_END
     <head>
         <title>$studentXML->name</title>
         <link rel="stylesheet" type="text/css" href="student.css" />
+        <script type="text/javascript" src="student-scripts.js" > </script>
         <meta charset="utf-8"/>
     </head>
     
@@ -39,8 +40,11 @@ echo <<<_END
                 <br/>
                 
                 <!-- Degrees & Graduation Date -->
-                Degrees:<br/>
-                <input type="button" name="addDegree" value="Add Degree"/><br/>
+                <div id="degreeContainer">
+                    Degrees:<br/>
+                    <input type="text" id="degrees" name="degrees[]"/><br/>
+                    <input type="button" id="addDegree" value="Add Degree"/><br/>
+                </div>
                 Graduation Date: <input type="text" name="gradDate" value="$studentXML->gradDate"><br/>
                 <br/>
                 
