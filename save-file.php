@@ -37,6 +37,10 @@
     $nodePhoneNum = $dom->createElement( "phoneNum", $_POST['phoneNum'] );
     $nodeContactInfo->appendChild( $nodePhoneNum );
     
+    //Add courses element to student root
+    $nodeCourses = $dom->createElement( "courses", "" );
+    $student->appendChild( $nodeCourses );
+    
     //Add interestArea element to student root
     $nodeInterestArea = $dom->createElement( "interestArea", $_POST['interestArea'] );
     $student->appendChild( $nodeInterestArea );
