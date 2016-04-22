@@ -29,7 +29,7 @@ echo <<<_END
 
         <!-- Student content pane -->
         <div id="studentContent">
-            <form action="save-file.php" method="post">
+            <form name="editStudent" action="save-file.php" method="post">
                 <!-- Hidden element used to pass on file name to PHP script -->
                 <input type="hidden" name="fileName" value="$currStudent">
 
@@ -39,7 +39,8 @@ echo <<<_END
                 <br/>
                 
                 <!-- Degrees & Graduation Date -->
-                
+                Degrees:<br/>
+                <input type="button" name="addDegree" value="Add Degree"/><br/>
                 Graduation Date: <input type="text" name="gradDate" value="$studentXML->gradDate"><br/>
                 <br/>
                 
