@@ -1,6 +1,9 @@
 <?php
+//Get current student's file for editing
+$currStudent = $_POST['fileName'];
+
 //Read in student data from XML file
-$studentXML = new SimpleXMLElement($_POST['name'], $options = 0, $data_is_url = true);
+$studentXML = new SimpleXMLElement( $currStudent, $options = 0, $data_is_url = true );
 
 //Get contact info
 $schoolEmail = $studentXML->contactInfo->schoolEmail;
@@ -8,7 +11,7 @@ $personalEmail = $studentXML->contactInfo->personalEmail;
 $phoneNum = $studentXML->contactInfo->phoneNum;
 
 //Build link back to page being edited
-$returnLink = "http://localhost/SDSMT_Web/student.php?name=" . substr( $_POST['name'], 9 );
+$returnLink = "http://localhost/SDSMT_Web/student.php?name=" . substr( $_POST['fileName'], 9 );
 
 echo <<<_END
 <html lang="en">
@@ -27,6 +30,9 @@ echo <<<_END
         <!-- Student content pane -->
         <div id="studentContent">
             <form action="save-file.php" method="post">
+                <!-- Hidden element used to pass on file name to PHP script -->
+                <input type="hidden" name="fileName" value="$currStudent">
+
                 <!-- Student name & picture fields -->
                 Name: <input type="text" name="name" value="$studentXML->name"><br/>
                 Picture Link: <input type="text" name="picture" value="$studentXML->picture"><br/>

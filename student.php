@@ -144,7 +144,7 @@ echo <<<_END
            
                 <!-- Edit Button -->
                 <form action="edit-student.php" method="post">
-                    <input type="hidden" name="name" value=$currStudent>
+                    <input type="hidden" name="fileName" value=$currStudent>
                     <input type="submit" value="Edit">
                 </form>
             </div>

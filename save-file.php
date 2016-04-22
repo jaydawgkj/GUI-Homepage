@@ -59,8 +59,9 @@
     
     //Save XML document
     $dom->formatOutput = true;
-    $dom->save( "test.xml" );
+    $dom->save( $_POST['fileName'] );
     
     //After file is saved, redirect user to the related student page
-    header( "Location: http://localhost/SDSMT_Web/student.php?name=matthew-dyke.xml" );
+    $returnLink = "http://localhost/SDSMT_Web/student.php?name=" . substr( $_POST['fileName'], 9 );
+    header( "Location: $returnLink" );
 ?>
