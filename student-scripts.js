@@ -1,5 +1,9 @@
 var numDegrees = 0;
 
+function initDegrees( degrees ) {
+    addDegree();
+};
+
 function addDegree() {
     var div = document.getElementById('degreeContainer');
     var input = document.createElement('input');

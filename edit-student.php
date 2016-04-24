@@ -5,6 +5,9 @@ $currStudent = $_POST['fileName'];
 //Read in student data from XML file
 $studentXML = new SimpleXMLElement( $currStudent, $options = 0, $data_is_url = true );
 
+//Save list of degrees
+$degrees = $studentXML->degrees->degree;
+
 //Get contact info
 $schoolEmail = $studentXML->contactInfo->schoolEmail;
 $personalEmail = $studentXML->contactInfo->personalEmail;
@@ -41,8 +44,11 @@ echo <<<_END
                 
                 <!-- Degrees & Graduation Date -->
                 <div id="degreeContainer">
-                    Degrees:<br/>
-                    <input type="text" id="degrees" name="degrees[]"/>
+                    Degrees:
+                    <input type="hidden" id="degreeList" value="$degrees"/>
+                    <script>
+                        initDegrees( document.getElementById( "degreeList" ) );
+                    </script>
                 </div>
                 <input type="button" id="addDegreeBtn" value="Add Degree" onclick="addDegree();"/><br/>
                 Graduation Date: <input type="text" name="gradDate" value="$studentXML->gradDate"><br/>
