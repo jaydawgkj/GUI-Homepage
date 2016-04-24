@@ -7,16 +7,22 @@ $studentXML = new SimpleXMLElement( $currStudent, $options = 0, $data_is_url = t
 
 //Get list of degrees
 $degreesString = "";
-foreach( $studentXML->degrees->degree as $currDegree )
+if( !empty( $studentXML->degrees->degree ) )
 {
-    $degreesString .= $currDegree . ";";
+    foreach( $studentXML->degrees->degree as $currDegree )
+    {
+        $degreesString .= $currDegree . ";";
+    }
 }
 
 //Get list of courses
 $coursesString = "";
-foreach( $studentXML->coursesList->course as $currCourse )
+if( !empty( $studentXML->coursesList->course ) )
 {
-    $coursesString .= $currCourse . ";";
+    foreach( $studentXML->coursesList->course as $currCourse )
+    {
+        $coursesString .= $currCourse . ";";
+    }
 }
 
 //Get contact info
