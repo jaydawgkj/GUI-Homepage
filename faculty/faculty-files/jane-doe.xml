@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<student>
+<faculty>
   <name>Dr. Jane Doe</name>
   <picture/>
   <degrees>
@@ -21,4 +21,4 @@
   <researchArea>Web Programming</researchArea>
   <LinkedIn>https://www.linkedin.com/in/matthewdyke</LinkedIn>
   <GitHub>https://github.com/madyke</GitHub>
-</student>
+</faculty>
