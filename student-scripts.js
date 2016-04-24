@@ -1,8 +1,7 @@
 var numDegrees = 0;
 
 function initDegrees( degrees ) {
-    degrees.forEach( addDegree("TEST") );
-    document.write("HI");
+    addDegree(degrees.value);
 };
 
 function addDegree( degreeName ) {
