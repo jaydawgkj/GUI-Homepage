@@ -1,17 +1,17 @@
 <?php
 
-//Get current student's name for loading data
-$currStudent = "student-files/" . $_GET['name'];
+//Get current faculty's name for loading data
+$currFaculty = "faculty-files/" . $_GET['name'];
 
-//Read in student data from XML file
-$studentXML = new SimpleXMLElement($currStudent, $options = 0, $data_is_url = true);
+//Read in faculty data from XML file
+$facultyXML = new SimpleXMLElement($currFaculty, $options = 0, $data_is_url = true);
 
 //Get degrees list
-$degrees = $studentXML->degrees->degree[0];
+$degrees = $facultyXML->degrees->degree[0];
 $i = 0;
-if( !empty( $studentXML->degrees->degree ) )
+if( !empty( $facultyXML->degrees->degree ) )
 {
-    foreach( $studentXML->degrees->degree as $currDegree )
+    foreach( $facultyXML->degrees->degree as $currDegree )
     {
         if( $i > 0 )
         {
@@ -23,15 +23,15 @@ if( !empty( $studentXML->degrees->degree ) )
 }
 
 //Get contact info
-$schoolEmail = $studentXML->contactInfo->schoolEmail;
-$personalEmail = $studentXML->contactInfo->personalEmail;
-$phoneNum = $studentXML->contactInfo->phoneNum;
+$schoolEmail = $facultyXML->contactInfo->schoolEmail;
+$personalEmail = $facultyXML->contactInfo->personalEmail;
+$phoneNum = $facultyXML->contactInfo->phoneNum;
 
 //Get courses list
 $courses = "";
-if( !empty( $studentXML->coursesList->course ) )
+if( !empty( $facultyXML->coursesList->course ) )
 {
-    foreach( $studentXML->coursesList->course as $currCourse )
+    foreach( $facultyXML->coursesList->course as $currCourse )
     {
         $courses .= "<p class='course'>";
         $courses .= $currCourse;
@@ -39,52 +39,32 @@ if( !empty( $studentXML->coursesList->course ) )
     }
 }
 
-//Get student website from XML if present
-if( !empty( $studentXML->studentWebsite ) )
+//Get faculty LinkedIn account from XML if present
+if( !empty( $facultyXML->LinkedIn ) )
 {
-    $studentWebsite = "<a class='link' href='$studentXML->studentWebsite'>Student Webpage</a><br/>";
+    $facultyLinkedIn = "<a class='link' href='$facultyXML->LinkedIn'>LinkedIn</a><br/>";
 }
 else
 {
-    $studentWebsite = "";
+    $facultyLinkedIn = "";
 }
 
-//Get student LinkedIn account from XML if present
-if( !empty( $studentXML->LinkedIn ) )
+//Get faculty GitHub account from XML if present
+if( !empty( $facultyXML->GitHub ) )
 {
-    $studentLinkedIn = "<a class='link' href='$studentXML->LinkedIn'>LinkedIn</a><br/>";
+    $facultyGitHub = "<a class='link' href='$facultyXML->GitHub'>GitHub</a><br/>";
 }
 else
 {
-    $studentLinkedIn = "";
-}
-
-//Get student GitHub account from XML if present
-if( !empty( $studentXML->GitHub ) )
-{
-    $studentGitHub = "<a class='link' href='$studentXML->GitHub'>GitHub</a><br/>";
-}
-else
-{
-    $studentGitHub = "";
-}
-
-//Get student KnewRecruit account from XML if present
-if( !empty( $studentXML->KnewRecruit ) )
-{
-    $studentKnewRecruit = "<a class='link' href='$studentXML->KnewRecruit'>KnewRecruit</a><br/>";
-}
-else
-{
-    $studentKnewRecruit = "";
+    $facultyGitHub = "";
 }
 
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
         <head>
-            <title>$studentXML->name</title>
-            <link rel="stylesheet" type="text/css" href="student.css" />
+            <title>$facultyXML->name</title>
+            <link rel="stylesheet" type="text/css" href="faculty.css" />
             <meta charset="utf-8"/>
         </head>
         
@@ -94,13 +74,13 @@ echo <<<_END
                 Header stuff
             </div>
             
-            <!-- Student content pane -->
-            <div id="studentContent">
+            <!-- faculty content pane -->
+            <div id="facultyContent">
             
-                <!-- Student name & picture -->
-                <h1 class="studentName">
-                    <img class="student" src="profile-pictures/$studentXML->picture">
-                    $studentXML->name
+                <!-- faculty name & picture -->
+                <h1 class="facultyName">
+                    <img class="faculty" src="profile-pictures/$facultyXML->picture">
+                    $facultyXML->name
                 </h1>
                 <hr class="picture"/>
                 
@@ -109,7 +89,6 @@ echo <<<_END
                 
                     <!-- Degree information -->
                     <p>$degrees</p>
-                    <p> <span class="emphasize">Graduation Date:</span> $studentXML->gradDate </p>
                     
                     <!-- Contact information -->
                     <p>
@@ -123,14 +102,14 @@ echo <<<_END
                 <!-- Course info pane -->
                 <div id="coursesInfo">
                 
-                    <p class="subSection">Courses</p>
+                    <p class="subSection">Current Courses</p>
                     <hr/>
                     
                     <!-- List of courses -->
                     $courses
                     
-                    <!-- Area of interest -->
-                    <p class='course'><span class="emphasize"><br/>Area of Interest:</span> $studentXML->interestArea</p>
+                    <!-- Research area -->
+                    <p class='course'><span class="emphasize"><br/>Research area:</span> $facultyXML->researchArea</p>
                 
                 </div>
                 
@@ -141,16 +120,14 @@ echo <<<_END
                     <hr/>
                     
                     <!-- List of external links -->
-                    $studentWebsite
-                    $studentLinkedIn
-                    $studentGitHub
-                    $studentKnewRecruit
+                    $facultyLinkedIn
+                    $facultyGitHub
                 
                 </div>
            
                 <!-- Edit Button -->
-                <form action="edit-student.php" method="post">
-                    <input type="hidden" name="fileName" value=$currStudent>
+                <form action="edit-faculty.php" method="post">
+                    <input type="hidden" name="fileName" value=$currFaculty>
                     <input type="submit" value="Edit">
                 </form>
             </div>

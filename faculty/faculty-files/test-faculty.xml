@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <student>
-  <name>John Doe</name>
+  <name>Dr. John Doe</name>
   <picture/>
   <degrees>
-    <degree>B.S. Computer Science</degree>
-    <degree>B.S. Applied and Computational Mathematics</degree>
-    <degree>B.S. Computer Engineering</degree>
+    <degree>B.S., South Dakota School of Mines and Technology</degree>
+    <degree>M.S., Massachusetts Institute of Technology</degree>
+    <degree>Ph.D., Massachusetts Institute of Technology</degree>
   </degrees>
-  <gradDate>May 2018</gradDate>
   <contactInfo>
     <schoolEmail>john.doe@example.edu</schoolEmail>
     <personalEmail>john.doe@example.com</personalEmail>
@@ -18,13 +17,8 @@
     <course>CSC 250 - Computer Programming II</course>
     <course>CSC 300 - Data Structures</course>
     <course>CSC 372 - Analysis of Algorithms</course>
-    <course>CSC 447 - Artificial Intelligence</course>
-    <course>CSC 468 - Graphical User Interfaces Programming</course>
-    <course>CSC 470 - Software Engineering</course>
   </coursesList>
-  <interestArea>Web Programming</interestArea>
-  <studentWebsite>http://dev.mcs.sdsmt.edu/~7025592/</studentWebsite>
+  <researchArea>Web Programming</researchArea>
   <LinkedIn>https://www.linkedin.com/in/matthewdyke</LinkedIn>
   <GitHub>https://github.com/madyke</GitHub>
-  <KnewRecruit>https://beta.knewrecruit.com/s/Matt</KnewRecruit>
 </student>
