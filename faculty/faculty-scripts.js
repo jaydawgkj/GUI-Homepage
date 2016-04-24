@@ -1,12 +1,12 @@
-var numDegrees = 0; //Number of student degrees
-var numCourses = 0; //Number of student courses
+var numDegrees = 0; //Number of faculty degrees
+var numCourses = 0; //Number of faculty courses
 
 ////////////////////////////////////////////////////////////////////////////////
 // Function: initDegrees( degrees )
 //
-// Description: Sets up initial degrees on edit-student page
+// Description: Sets up initial degrees on edit-faculty page
 //
-// Parameter: degrees - string holding student degrees, seperated by a semicolon
+// Parameter: degrees - string holding faculty degrees, seperated by a semicolon
 ////////////////////////////////////////////////////////////////////////////////
 function initDegrees( degrees ) { 
     //Get index of first ; in degree string
@@ -53,9 +53,9 @@ function addDegree( degreeName ) {
 ////////////////////////////////////////////////////////////////////////////////
 // Function: initCourses( courses )
 //
-// Description: Sets up initial courses on edit-student page
+// Description: Sets up initial courses on edit-faculty page
 //
-// Parameter: courses - string holding student courses, seperated by a semicolon
+// Parameter: courses - string holding faculty courses, seperated by a semicolon
 ////////////////////////////////////////////////////////////////////////////////
 function initCourses( courses ) { 
     //Get index of first ; in courses string
