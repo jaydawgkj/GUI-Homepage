@@ -50,7 +50,7 @@ echo <<<_END
                         initDegrees( document.getElementById( "degreeList" ) );
                     </script>
                 </div>
-                <input type="button" id="addDegreeBtn" value="Add Degree" onclick="addDegree();"/><br/>
+                <input type="button" id="addDegreeBtn" value="Add Degree" onclick="addDegree('');"/><br/>
                 Graduation Date: <input type="text" name="gradDate" value="$studentXML->gradDate"><br/>
                 <br/>
                 
