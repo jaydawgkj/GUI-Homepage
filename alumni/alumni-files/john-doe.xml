@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<student>
+<alumni>
   <name>Dr. John Doe</name>
   <picture/>
   <degrees>
@@ -8,17 +8,16 @@
     <degree>Ph.D., Massachusetts Institute of Technology</degree>
   </degrees>
   <contactInfo>
-    <schoolEmail>john.doe@example.edu</schoolEmail>
+    <companyEmail>john.doe@example.edu</companyEmail>
     <personalEmail>john.doe@example.com</personalEmail>
     <phoneNum>555-5555</phoneNum>
   </contactInfo>
-  <coursesList>
-    <course>CSC 150 - Computer Programming I</course>
-    <course>CSC 250 - Computer Programming II</course>
-    <course>CSC 300 - Data Structures</course>
-    <course>CSC 372 - Analysis of Algorithms</course>
-  </coursesList>
-  <researchArea>Web Programming</researchArea>
+  <companyList>
+    <company>Google</company>
+    <company>IBM</company>
+    <company>Microsoft</company>
+  </companyList>
+  <specialtyArea>Web Programming</specialtyArea>
   <LinkedIn>https://www.linkedin.com/in/matthewdyke</LinkedIn>
   <GitHub>https://github.com/madyke</GitHub>
-</student>
+</alumni>

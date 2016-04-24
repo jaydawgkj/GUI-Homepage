@@ -1,17 +1,17 @@
 <?php
 
-//Get current faculty's name for loading data
-$currFaculty = "faculty-files/" . $_GET['name'];
+//Get current alumni's name for loading data
+$currAlumni = "alumni-files/" . $_GET['name'];
 
-//Read in faculty data from XML file
-$facultyXML = new SimpleXMLElement($currFaculty, $options = 0, $data_is_url = true);
+//Read in alumni data from XML file
+$alumniXML = new SimpleXMLElement($currAlumni, $options = 0, $data_is_url = true);
 
 //Get degrees list
-$degrees = $facultyXML->degrees->degree[0];
+$degrees = $alumniXML->degrees->degree[0];
 $i = 0;
-if( !empty( $facultyXML->degrees->degree ) )
+if( !empty( $alumniXML->degrees->degree ) )
 {
-    foreach( $facultyXML->degrees->degree as $currDegree )
+    foreach( $alumniXML->degrees->degree as $currDegree )
     {
         if( $i > 0 )
         {
@@ -23,48 +23,48 @@ if( !empty( $facultyXML->degrees->degree ) )
 }
 
 //Get contact info
-$schoolEmail = $facultyXML->contactInfo->schoolEmail;
-$personalEmail = $facultyXML->contactInfo->personalEmail;
-$phoneNum = $facultyXML->contactInfo->phoneNum;
+$companyEmail = $alumniXML->contactInfo->companyEmail;
+$personalEmail = $alumniXML->contactInfo->personalEmail;
+$phoneNum = $alumniXML->contactInfo->phoneNum;
 
-//Get courses list
-$courses = "";
-if( !empty( $facultyXML->coursesList->course ) )
+//Get companies list
+$companies = "";
+if( !empty( $alumniXML->companyList->company ) )
 {
-    foreach( $facultyXML->coursesList->course as $currCourse )
+    foreach( $alumniXML->companyList->company as $currCompany )
     {
-        $courses .= "<p class='course'>";
-        $courses .= $currCourse;
-        $courses .= "</p>";
+        $companies .= "<p class='company'>";
+        $companies .= $currCompany;
+        $companies .= "</p>";
     }
 }
 
-//Get faculty LinkedIn account from XML if present
-if( !empty( $facultyXML->LinkedIn ) )
+//Get alumni LinkedIn account from XML if present
+if( !empty( $alumniXML->LinkedIn ) )
 {
-    $facultyLinkedIn = "<a class='link' href='$facultyXML->LinkedIn'>LinkedIn</a><br/>";
+    $alumniLinkedIn = "<a class='link' href='$alumniXML->LinkedIn'>LinkedIn</a><br/>";
 }
 else
 {
-    $facultyLinkedIn = "";
+    $alumniLinkedIn = "";
 }
 
-//Get faculty GitHub account from XML if present
-if( !empty( $facultyXML->GitHub ) )
+//Get alumni GitHub account from XML if present
+if( !empty( $alumniXML->GitHub ) )
 {
-    $facultyGitHub = "<a class='link' href='$facultyXML->GitHub'>GitHub</a><br/>";
+    $alumniGitHub = "<a class='link' href='$alumniXML->GitHub'>GitHub</a><br/>";
 }
 else
 {
-    $facultyGitHub = "";
+    $alumniGitHub = "";
 }
 
 //Print formatted HTLM page filling in with XML data
 echo <<<_END
     <html lang="en">
         <head>
-            <title>$facultyXML->name</title>
-            <link rel="stylesheet" type="text/css" href="faculty.css" />
+            <title>$alumniXML->name</title>
+            <link rel="stylesheet" type="text/css" href="alumni.css" />
             <meta charset="utf-8"/>
         </head>
         
@@ -74,13 +74,13 @@ echo <<<_END
                 Header stuff
             </div>
             
-            <!-- faculty content pane -->
-            <div id="facultyContent">
+            <!-- alumni content pane -->
+            <div id="alumniContent">
             
-                <!-- faculty name & picture -->
-                <h1 class="facultyName">
-                    <img class="faculty" src="profile-pictures/$facultyXML->picture">
-                    $facultyXML->name
+                <!-- alumni name & picture -->
+                <h1 class="alumniName">
+                    <img class="alumni" src="profile-pictures/$alumniXML->picture">
+                    $alumniXML->name
                 </h1>
                 <hr class="picture"/>
                 
@@ -92,24 +92,24 @@ echo <<<_END
                     
                     <!-- Contact information -->
                     <p>
-                        <span class="emphasize">School Email:</span> $schoolEmail<br/>
+                        <span class="emphasize">Company Email:</span> $companyEmail<br/>
                         <span class="emphasize">Personal Email:</span> $personalEmail<br/>
                         <span class="emphasize">Phone Number:</span> $phoneNum<br/>
                     </p>
                 
                 </div>
                 
-                <!-- Course info pane -->
-                <div id="coursesInfo">
+                <!-- company info pane -->
+                <div id="companiesInfo">
                 
-                    <p class="subSection">Current Courses</p>
+                    <p class="subSection">Current companies</p>
                     <hr/>
                     
-                    <!-- List of courses -->
-                    $courses
+                    <!-- List of companies -->
+                    $companies
                     
-                    <!-- Research area -->
-                    <p class='course'><span class="emphasize"><br/>Research area:</span> $facultyXML->researchArea</p>
+                    <!-- Specialty area -->
+                    <p class='company'><span class="emphasize"><br/>Specialty area:</span> $alumniXML->specialtyArea</p>
                 
                 </div>
                 
@@ -120,14 +120,14 @@ echo <<<_END
                     <hr/>
                     
                     <!-- List of external links -->
-                    $facultyLinkedIn
-                    $facultyGitHub
+                    $alumniLinkedIn
+                    $alumniGitHub
                 
                 </div>
            
                 <!-- Edit Button -->
-                <form action="edit-faculty.php" method="post">
-                    <input type="hidden" name="fileName" value=$currFaculty>
+                <form action="edit-alumni.php" method="post">
+                    <input type="hidden" name="fileName" value=$currAlumni>
                     <input type="submit" value="Edit">
                 </form>
             </div>
