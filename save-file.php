@@ -17,6 +17,17 @@
     $nodeDegrees = $dom->createElement( "degrees", "" );
     $student->appendChild( $nodeDegrees );
     
+    //Loop over degrees (assumed to be less than 10)
+    for( $i = 0; $i < 10; $i++ )
+    {
+        //Check if current degree is non-empty
+        if( !empty( $_POST["degree_" . $i] ) )
+        {
+            $nodeCurrDegree = $dom->createElement( "degree", $_POST["degree_" . $i] );
+            $nodeDegrees->appendChild( $nodeCurrDegree );
+        }
+    }
+    
     //Add gradDate element to student root
     $nodeGradDate = $dom->createElement( "gradDate", $_POST['gradDate'] );
     $student->appendChild( $nodeGradDate );
