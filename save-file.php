@@ -49,8 +49,19 @@
     $nodeContactInfo->appendChild( $nodePhoneNum );
     
     //Add courses element to student root
-    $nodeCourses = $dom->createElement( "courses", "" );
+    $nodeCourses = $dom->createElement( "coursesList", "" );
     $student->appendChild( $nodeCourses );
+    
+    //Loop over courses (assumed to be less than 25)
+    for( $i = 0; $i < 25; $i++ )
+    {
+        //Check if current course is non-empty
+        if( !empty( $_POST["course_" . $i] ) )
+        {
+            $nodeCurrCourse = $dom->createElement( "course", $_POST["course_" . $i] );
+            $nodeCourses->appendChild( $nodeCurrCourse );
+        }
+    }
     
     //Add interestArea element to student root
     $nodeInterestArea = $dom->createElement( "interestArea", $_POST['interestArea'] );

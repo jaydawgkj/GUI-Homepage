@@ -12,6 +12,13 @@ foreach( $studentXML->degrees->degree as $currDegree )
     $degreesString .= $currDegree . ";";
 }
 
+//Get list of courses
+$coursesString = "";
+foreach( $studentXML->coursesList->course as $currCourse )
+{
+    $coursesString .= $currCourse . ";";
+}
+
 //Get contact info
 $schoolEmail = $studentXML->contactInfo->schoolEmail;
 $personalEmail = $studentXML->contactInfo->personalEmail;
@@ -66,10 +73,13 @@ echo <<<_END
                 
                 <!-- Courses & Interest Area -->
                 <div id="courseContainer">
-                    Courses:<br/>
-                    <input type="text" id="courses" name="coureses[]"/>
+                    Courses:
+                    <input type="hidden" id="coursesString" value="$coursesString"/>
+                    <script>
+                        initCourses(document.getElementById('coursesString'));
+                    </script>
                 </div>
-                <input type="button" id="addCourseBtn" value="Add Course" onclick="addCourse();"/><br/>
+                <input type="button" id="addCourseBtn" value="Add Course" onclick="addCourse('');"/><br/>
                 Area of Interest: <input type="text" name="interestArea" value="$studentXML->interestArea"><br/>
                 <br/>
                 
