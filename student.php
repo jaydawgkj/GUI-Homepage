@@ -9,14 +9,17 @@ $studentXML = new SimpleXMLElement($currStudent, $options = 0, $data_is_url = tr
 //Get degrees list
 $degrees = $studentXML->degrees->degree[0];
 $i = 0;
-foreach( $studentXML->degrees->degree as $currDegree )
+if( !empty( $studentXML->degrees->degree ) )
 {
-    if( $i > 0 )
+    foreach( $studentXML->degrees->degree as $currDegree )
     {
-        $degrees .= "<br/>";
-        $degrees .= $currDegree;
+        if( $i > 0 )
+        {
+            $degrees .= "<br/>";
+            $degrees .= $currDegree;
+        }
+        $i += 1;
     }
-    $i += 1;
 }
 
 //Get contact info
