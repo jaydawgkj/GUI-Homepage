@@ -26,11 +26,14 @@ $phoneNum = $studentXML->contactInfo->phoneNum;
 
 //Get courses list
 $courses = "";
-foreach( $studentXML->coursesList->course as $currCourse )
+if( !empty( $studentXML->coursesList->course ) )
 {
-    $courses .= "<p class='course'>";
-    $courses .= $currCourse;
-    $courses .= "</p>";
+    foreach( $studentXML->coursesList->course as $currCourse )
+    {
+        $courses .= "<p class='course'>";
+        $courses .= $currCourse;
+        $courses .= "</p>";
+    }
 }
 
 //Get student website from XML if present
