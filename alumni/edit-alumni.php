@@ -85,7 +85,7 @@ echo <<<_END
                     </script>
                 </div>
                 <input type="button" id="addCompanyBtn" value="Add Company" onclick="addCompany('');"/><br/>
-                Research Area: <input type="text" name="researchArea" value="$alumniXML->researchArea"><br/>
+                Specialty Area: <input type="text" name="specialtyArea" value="$alumniXML->specialtyArea"><br/>
                 <br/>
                 
                 <!-- External Links -->
