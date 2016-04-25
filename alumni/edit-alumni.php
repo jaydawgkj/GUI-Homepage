@@ -1,44 +1,44 @@
 <?php
-//Get current faculty's file for editing
-$currfaculty = $_POST['fileName'];
+//Get current alumni's file for editing
+$currAlumni = $_POST['fileName'];
 
-//Read in faculty data from XML file
-$facultyXML = new SimpleXMLElement( $currfaculty, $options = 0, $data_is_url = true );
+//Read in alumni data from XML file
+$alumniXML = new SimpleXMLElement( $currAlumni, $options = 0, $data_is_url = true );
 
 //Get list of degrees
 $degreesString = "";
-if( !empty( $facultyXML->degrees->degree ) )
+if( !empty( $alumniXML->degrees->degree ) )
 {
-    foreach( $facultyXML->degrees->degree as $currDegree )
+    foreach( $alumniXML->degrees->degree as $currDegree )
     {
         $degreesString .= $currDegree . ";";
     }
 }
 
-//Get list of courses
-$coursesString = "";
-if( !empty( $facultyXML->coursesList->course ) )
+//Get list of companies
+$companiesString = "";
+if( !empty( $alumniXML->companyList->company ) )
 {
-    foreach( $facultyXML->coursesList->course as $currCourse )
+    foreach( $alumniXML->companyList->company as $currCompany )
     {
-        $coursesString .= $currCourse . ";";
+        $companiesString .= $currCompany . ";";
     }
 }
 
 //Get contact info
-$schoolEmail = $facultyXML->contactInfo->schoolEmail;
-$personalEmail = $facultyXML->contactInfo->personalEmail;
-$phoneNum = $facultyXML->contactInfo->phoneNum;
+$companyEmail = $alumniXML->contactInfo->companyEmail;
+$personalEmail = $alumniXML->contactInfo->personalEmail;
+$phoneNum = $alumniXML->contactInfo->phoneNum;
 
 //Build link back to page being edited
-$returnLink = "/SDSMT_Web/faculty/faculty.php?name=" . substr( $_POST['fileName'], 14 );
+$returnLink = "/SDSMT_Web/alumni/alumni.php?name=" . substr( $_POST['fileName'], 13 );
 
 echo <<<_END
 <html lang="en">
     <head>
-        <title>$facultyXML->name</title>
-        <link rel="stylesheet" type="text/css" href="faculty.css" />
-        <script type="text/javascript" src="faculty-scripts.js" > </script>
+        <title>$alumniXML->name</title>
+        <link rel="stylesheet" type="text/css" href="alumni.css" />
+        <script type="text/javascript" src="alumni-scripts.js" > </script>
         <meta charset="utf-8"/>
     </head>
     
@@ -48,18 +48,18 @@ echo <<<_END
             Header stuff
         </div>
 
-        <!-- faculty content pane -->
-        <div id="facultyContent">
-            <form name="editfaculty" action="save-file.php" method="post">
+        <!-- alumni content pane -->
+        <div id="alumniContent">
+            <form name="editalumni" action="save-file.php" method="post">
                 <!-- Hidden element used to pass on file name to PHP script -->
-                <input type="hidden" name="fileName" value="$currfaculty">
+                <input type="hidden" name="fileName" value="$currAlumni">
 
-                <!-- faculty name & picture fields -->
-                Name: <input type="text" name="name" value="$facultyXML->name"><br/>
-                Picture Link: <input type="text" name="picture" value="$facultyXML->picture"><br/>
+                <!-- alumni name & picture fields -->
+                Name: <input type="text" name="name" value="$alumniXML->name"><br/>
+                Picture Link: <input type="text" name="picture" value="$alumniXML->picture"><br/>
                 <br/>
                 
-                <!-- Degrees & Graduation Date -->
+                <!-- Degrees -->
                 <div id="degreeContainer">
                     Degrees:
                     <input type="hidden" id="degreesString" value="$degreesString"/>
@@ -71,26 +71,26 @@ echo <<<_END
                 <br/>
                 
                 <!-- Contact Information -->
-                School Email: <input type="text" size="30" name="schoolEmail" value="$schoolEmail"><br/>
+                Company Email: <input type="text" size="30" name="companyEmail" value="$companyEmail"><br/>
                 Personal Email: <input type="text" size="30" name="personalEmail" value="$personalEmail"><br/>
                 Phone Number: <input type="text" name="phoneNum" value="$phoneNum"><br/>
                 <br/>
                 
-                <!-- Courses & Interest Area -->
-                <div id="courseContainer">
-                    Courses:
-                    <input type="hidden" id="coursesString" value="$coursesString"/>
+                <!-- Companies & Interest Area -->
+                <div id="companyContainer">
+                    Companies:
+                    <input type="hidden" id="companiesString" value="$companiesString"/>
                     <script>
-                        initCourses(document.getElementById('coursesString'));
+                        initCompanies(document.getElementById('companiesString'));
                     </script>
                 </div>
-                <input type="button" id="addCourseBtn" value="Add Course" onclick="addCourse('');"/><br/>
-                Research Area: <input type="text" name="researchArea" value="$facultyXML->researchArea"><br/>
+                <input type="button" id="addCompanyBtn" value="Add Company" onclick="addCompany('');"/><br/>
+                Research Area: <input type="text" name="researchArea" value="$alumniXML->researchArea"><br/>
                 <br/>
                 
                 <!-- External Links -->
-                LinkedIn: <input type="text" size="50" name="LinkedIn" value="$facultyXML->LinkedIn"><br/>
-                GitHub: <input type="text" size="50" name="GitHub" value="$facultyXML->GitHub"><br/>
+                LinkedIn: <input type="text" size="50" name="LinkedIn" value="$alumniXML->LinkedIn"><br/>
+                GitHub: <input type="text" size="50" name="GitHub" value="$alumniXML->GitHub"><br/>
                 
                 <!-- Save, Reset, & Cancel buttons -->
                 <br/><input type="submit" value="Save"/>
